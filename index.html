@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios con Validaciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Formulario de Clientes -->
+        <section class="form-section">
+            <form class="formulario" id="clientes">
+                <h2>Clientes</h2>
+                <label for="cedula">Cédula:</label>
+                <input type="number" id="cedula" name="cedula" required pattern="\d+" title="Solo se permiten números">
+
+                <label for="nombres">Nombres:</label>
+                <input type="text" id="nombres" name="nombres" required>
+
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required>
+
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" required>
+
+                <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+
+                <label for="genero">Género:</label>
+                <select id="genero" name="genero" required>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="celular">Celular:</label>
+                <input type="tel" id="celular" name="celular" required pattern="\d{10}" title="Ingrese un número de 10 dígitos">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Formulario de Vehículos -->
+        <section class="form-section">
+            <form class="formulario" id="vehiculos">
+                <h2>Vehículos</h2>
+                <label for="modelo">Modelo:</label>
+                <input type="text" id="modelo" name="modelo" required>
+
+                <label for="numero_motor">Número de motor:</label>
+                <input type="number" id="numero_motor" name="numero_motor" required pattern="\d+" title="Solo se permiten números">
+
+                <label for="cilindraje">Cilindraje:</label>
+                <input type="number" id="cilindraje" name="cilindraje" required pattern="\d+" title="Solo se permiten números">
+
+                <label for="color">Color:</label>
+                <input type="text" id="color" name="color" required>
+
+                <label for="fecha_ensamble">Fecha de Ensamble:</label>
+                <input type="date" id="fecha_ensamble" name="fecha_ensamble" required>
+
+                <label for="ano_modelo">Año modelo:</label>
+                <input type="number" id="ano_modelo" name="ano_modelo" required min="1900" max="2099" step="1" title="Ingrese un año válido">
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Formulario de Ventas -->
+        <section class="form-section">
+            <form class="formulario" id="ventas">
+                <h2>Ventas</h2>
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+
+                <label for="numero_factura">Número de Factura:</label>
+                <input type="text" id="numero_factura" name="numero_factura" required pattern="\d+" title="Solo se permiten números">
+
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" id="ciudad" name="ciudad" required>
+
+                <label for="tienda">Tienda:</label>
+                <input type="text" id="tienda" name="tienda" required>
+
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" name="precio" required min="0" step="0.01" title="Ingrese un precio válido">
+
+                <label for="numero_motor">Número de motor:</label>
+                <input type="text" id="numero_motor" name="numero_motor" required pattern="\d+" title="Solo se permiten números">
+
+                <label for="modelo">Modelo:</label>
+                <input type="text" id="modelo" name="modelo" required>
+
+                <label for="vendedor">Vendedor:</label>
+                <input type="text" id="vendedor" name="vendedor" required>
+                <label for="archivo_ventas">Adjuntar archivo de ventas (Excel):</label>
+                <input type="file" id="archivo_ventas" name="archivo_ventas" accept=".xlsx, .xls" required>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+         <!-- Tabla de Resultados -->
+         <section class="resultados-section">
+            <h2>Clientes con más de 2 compras</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cédula</th>
+                        <th>Nombre</th>
+                        <th>Modelos Comprados</th>
+                        <th>Periodicidad Promedio de Compra (días)</th>
+                        <th>Próxima Compra Estimada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Datos ficticios -->
+                    <tr>
+                        <td>123456789</td>
+                        <td>Juan Pérez</td>
+                        <td>Modelo A, Modelo B, Modelo C</td>
+                        <td>180</td>
+                        <td>2024-10-10</td>
+                    </tr>
+                    <tr>
+                        <td>987654321</td>
+                        <td>María López</td>
+                        <td>Modelo D, Modelo E, Modelo F</td>
+                        <td>210</td>
+                        <td>2025-01-15</td>
+                    </tr>
+                    <tr>
+                        <td>456789123</td>
+                        <td>Carlos García</td>
+                        <td>Modelo G, Modelo H, Modelo I</td>
+                        <td>200</td>
+                        <td>2024-11-05</td>
+                    </tr>
+                    <tr>
+                        <td>789123456</td>
+                        <td>Ana Martínez</td>
+                        <td>Modelo J, Modelo K, Modelo L</td>
+                        <td>195</td>
+                        <td>2024-12-20</td>
+                    </tr>
+                    <tr>
+                        <td>321654987</td>
+                        <td>Luis Fernández</td>
+                        <td>Modelo M, Modelo N, Modelo O</td>
+                        <td>185</td>
+                        <td>2024-09-25</td>
+                    </tr>
+                    <tr>
+                        <td>654321789</td>
+                        <td>Sofía Ramírez</td>
+                        <td>Modelo P, Modelo Q, Modelo R</td>
+                        <td>190</td>
+                        <td>2025-02-02</td>
+                    </tr>
+                    <tr>
+                        <td>159753486</td>
+                        <td>Jorge Ruiz</td>
+                        <td>Modelo S, Modelo T, Modelo U</td>
+                        <td>205</td>
+                        <td>2024-11-30</td>
+                    </tr>
+                    <tr>
+                        <td>753486159</td>
+                        <td>Elena Gutiérrez</td>
+                        <td>Modelo V, Modelo W, Modelo X</td>
+                        <td>220</td>
+                        <td>2025-03-20</td>
+                    </tr>
+                    <tr>
+                        <td>852963741</td>
+                        <td>Fernando Ortiz</td>
+                        <td>Modelo Y, Modelo Z, Modelo AA</td>
+                        <td>175</td>
+                        <td>2024-08-18</td>
+                    </tr>
+                    <tr>
+                        <td>963741852</td>
+                        <td>Isabel Vargas</td>
+                        <td>Modelo BB, Modelo CC, Modelo DD</td>
+                        <td>225</td>
+                        <td>2025-04-05</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+</html>
